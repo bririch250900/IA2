@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Our Products </title>
+
+<style>
+  .product-image {border-radius: 50%;}
+  .product-details {font-family: garamond; text-align: center;}
+</style>
+
+</head>
+
+<body style="background-image: linear-gradient(white, white)">
+  
+<table align="center" border="0" width="90%">
+<p align="center" style="font-family:'Brush Script MT', cursive; font-size:80px"> Our Products </p>
+
+<tr>
+	<td> <center> <img src="Assets/Round Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+	<td> <center> <img src="Assets/Oval Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+	<td> <center> <img src="Assets/Aria Oval Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+</tr>
+    
+<tr>
+	<td class="product-details">
+        <p> Round Engagement Ring <br> $3,250.00 <br><br> <button onclick="addToCart('Round Engagement Ring', 3250)"> Select </button> </p>
+	</td>
+	<td class="product-details">
+        <p>Oval Engagement Ring <br> $3,250.00 <br><br> <button onclick="addToCart('Oval Engagement Ring', 3250)"> Select </button> </p>
+	</td>
+	<td class="product-details">
+        <p>Aria Oval Engagement Ring <br> $3,450.00 <br><br> <button onclick="addToCart('Aria Oval Engagement Ring', 3450)"> Select </button> </p>
+      </td>
+</tr>
+
+<tr>
+	<td> <center> <img src="Assets/Aria Oval Eternity Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+	<td> <center> <img src="Assets/Aria Emerald Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+	<td> <center> <img src="Assets/Cushion Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+</tr>
+    
+<tr>
+	<td class="product-details">
+        <p>Aria Oval Eternity Engagement Ring <br> $3,450.00 <br><br> <button onclick="addToCart('Aria Oval Eternity Engagement Ring', 3450)"> Select </button> </p>
+	</td>
+	<td class="product-details">
+        <p>Aria Emerald Engagement Ring <br> $3,450.00 <br><br> <button onclick="addToCart('Aria Emerald Engagement Ring', 3450)"> Select </button> </p>
+      	</td>
+      	<td class="product-details">
+        <p>Cushion Engagement Ring <br> $3,250.00 <br><br> <button onclick="addToCart('Cushion Engagement Ring', 3250)"> Select </button> </p>
+      	</td>
+</tr>
+   
+<tr>
+      	<td> <center> <img src="Assets/Emerald Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+      	<td> <center> <img src="Assets/Emerald Eternity Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+      	<td> <center> <img src="Assets/Radiant Engagement Ring.png" class="product-image" height="200" /> </center> </td>
+</tr>
+    
+<tr>
+      	<td class="product-details">
+        <p>Emerald Engagement Ring <br> $3,250.00 <br><br> <button onclick="addToCart('Emerald Engagement Ring', 3250)"> Select </button></p>
+      	</td>
+      	<td class="product-details">
+        <p>Emerald Eternity Engagement Ring <br> $3,250.00 <br><br> <button onclick="addToCart('Emerald Eternity Engagement Ring', 3250)"> Select </button></p>
+      	</td>
+      	<td class="product-details">
+        <p>Radiant Engagement Ring <br> $3,250.00 <br><br> <button onclick="addToCart('Radiant Engagement Ring', 3250)"> Select </button></p>
+      	</td>
+    
+</tr>
+ 
+</table>
+
+<br><br>
+  
+<center>
+   	 <button onclick="checkout()"> Checkout </button>
+   	 <button onclick="cancelCart()"> Cancel </button>
+    	<button onclick="window.close()"> Exit </button>
+</center>
+  
+<script>
+    let cartItems = [];
+
+    function addToCart(productName, price) {
+        cartItems.push({ name: productName, price: price });
+        console.log(cartItems); // Debugging
+    }
+
+    function checkout() {
+        // Store cart data
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        // Redirect to invoice page
+        window.location.href = 'invoice.html';
+    }
+
+    function cancelCart() {
+        cartItems = [];
+        console.log("Cart cleared.");
+        alert("Cart has been cleared.");
+    }
+</script>
+
+<br><br>
+
+<hr>
+
+<p align="center" style="font-family:'Brush Script MT', cursive; font-size:30px"> About Us </p>
+<center>
+<p style= "font-family: garamond;"> Name: Britney Richardson 
+<br> ID #: 1902830 
+<br> Email: bririchie2000@gmail.com 
+<br> Cit2011 
+<br> Individual Assignment 2 
+<br> Class Day/Time: Wednesdays (8:00 to 10:00) </p>
+</center>
+
+<hr>
+
+<center>
+<p style="font-family: garamond;"> Need assistance? <a href="mailto:britneyarichardson@utech.edu.jm?subject=Customer Inquiry&body=Hello, I have a question about..." style="text-decoration: none; color: blue;"> Contact Us </a>
+</center>
+
+</body>
+</html>
